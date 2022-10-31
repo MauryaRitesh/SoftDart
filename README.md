@@ -1,6 +1,6 @@
 # SoftDart
 
-Project for SoftaBlitz'22
+# Project for SoftaBlitz'22
 
 ## Erudition repository
  
