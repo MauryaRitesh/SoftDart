@@ -4,6 +4,7 @@ module com.example.softdart {
     requires javafx.fxml;
     requires java.sql;
     requires mysql.connector.java;
+    requires kotlin.stdlib;
 
 
     opens com.example.softdart to javafx.fxml;
