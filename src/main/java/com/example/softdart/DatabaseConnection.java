@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 
 public class DatabaseConnection {
     public Connection databaseLink;
-
+    private String databaseName;
+    private String databaseUser;
     public Connection getConnection(){
-        String databaseName = "account";
-        String databaseUser = "root";
         String databasePassword = "admin";
+        //String databaseName;
         String url = "jdbc:mysql://localhost:3306/" + databaseName;
 
         try{
