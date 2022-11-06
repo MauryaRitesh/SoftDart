@@ -35,13 +35,18 @@
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="57.0" layoutY="307.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: #E96151;" text="Cancel" textFill="WHITE">
+            <Button fx:id="cancelButton" layoutX="57.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="182.0" style="-fx-background-color: #E96151;" text="Cancel" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
             <Label fx:id="loginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="227.0" prefHeight="17.0" prefWidth="268.0" textAlignment="CENTER" textFill="RED" />
             <PasswordField fx:id="enterPasswordField" layoutX="104.0" layoutY="175.0" prefHeight="26.0" prefWidth="173.0" promptText="Password" />
+            <Button fx:id="signupButton" layoutX="58.0" layoutY="298.0" mnemonicParsing="false" onAction="#signupButtonOnAction" prefHeight="28.0" prefWidth="181.0" style="-fx-background-color: #E96151;" text="SignUp" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </right>
