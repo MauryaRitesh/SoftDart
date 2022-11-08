@@ -3,7 +3,9 @@ package com.example.softdart;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -46,6 +48,10 @@ public class RegisterController implements Initializable {
         if (setPasswordField.getText().equals(confirmPasswordField.getText())){
             registerUser();
             confirmPasswordLabel.setText("");
+            registrationMessageLabel.setText("User registered successfully!");
+
+            homePage();
+
         } else {
             confirmPasswordLabel.setText("Password does not match");
         }
@@ -75,7 +81,7 @@ public class RegisterController implements Initializable {
             Statement statement = connectDB.createStatement();
             statement.executeUpdate(insertToRegister);
 
-            registrationMessageLabel.setText("User registered successfully!");
+
 
         }catch (Exception e){
             e.printStackTrace();
@@ -83,5 +89,20 @@ public class RegisterController implements Initializable {
         }
 
 
+    }
+
+    @FXML
+    public void homePage(){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+            Stage homeStage = HelloApplication.appStage;
+            homeStage.setScene(scene);
+            homeStage.show();
+
+        } catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }

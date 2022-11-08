@@ -85,7 +85,7 @@ public class LoginController{
     public void createAccountForm(){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 520, 370);
+            Scene scene = new Scene(fxmlLoader.load(), 520, 470);
             Stage registerStage = HelloApplication.appStage;
             registerStage.setScene(scene);
             registerStage.show();
