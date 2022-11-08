@@ -6,12 +6,7 @@ import java.util.ResourceBundle;
 
 public class DatabaseConnection {
     public Connection databaseLink;
-
     public Connection getConnection(){
-        /*String databaseName = "account_db";
-        String databaseUser = "root";
-        String databasePassword = "abcd1234";
-        String url = "jdbc:mysql://localhost:3306/" + databaseName;*/
 
         ResourceBundle rd = ResourceBundle.getBundle("auth");
 
@@ -26,6 +21,8 @@ public class DatabaseConnection {
 
         // password to connect db
         String databasePassword = rd.getString("databasePassword");
+
+        String url = "jdbc:mysql://localhost:3306/" + databaseName;
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
