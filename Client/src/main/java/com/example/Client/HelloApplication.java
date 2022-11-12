@@ -5,12 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.net.Socket;
 
 public class HelloApplication extends Application {
     public static Stage appStage;
 
+    Socket socket;
+
     @Override
     public void start(Stage stage) throws IOException {
+        socket = new Socket("localhost", 6969);
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));//fxml object created
         Scene scene = new Scene(fxmlLoader.load(), 520, 400);    //scene object created
         stage.setTitle("SoftDart");

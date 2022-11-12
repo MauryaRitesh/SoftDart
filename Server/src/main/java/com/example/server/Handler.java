@@ -27,14 +27,31 @@ package com.example.server;
         Message msg;
         while (true){
             try {
+                Object obj = ois.readObject();
+                if(obj instanceof Message) {
+                    Message msg1 = (Message) obj;
+
+                } else if(obj instanceof Thread) {
+                    Thread t = (Thread) obj;
+                } else if(obj instanceof LoginReq) {
+                    LoginReq req = new LoginReq();
+                    String pass = req.password;
+                    String user = req.username;
+                    // DB Query
+                    oos.writeObject(new LoginRes());
+                    oos.flush();
+                }
                 msg=(Message)ois.readObject();
                 System.out.println(msg.getName()+" : "+ msg.getText());
                 for (ObjectOutputStream oos: Server.list) {
                     if(oos.equals(this.oos))continue;
                     oos.writeObject(msg);
                 }
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (IOException e) {
+                System.out.println("Client disconnected!");
+                break;
+            } catch (ClassNotFoundException e) {
+                System.out.println("Invalid input!");
             }
         }
     }
@@ -47,5 +64,14 @@ package com.example.server;
         public Object getText() {
             return null;
         }
+    }
+
+    private class LoginReq {
+        public String username;
+        public String password;
+    }
+
+    private class LoginRes {
+        public boolean status;
     }
 }

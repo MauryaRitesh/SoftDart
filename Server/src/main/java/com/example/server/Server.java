@@ -9,14 +9,24 @@ package com.example.server;
         import java.io.ObjectOutputStream;
         import java.net.ServerSocket;
         import java.net.Socket;
+        import java.sql.Connection;
         import java.util.ArrayList;
 
 public class Server{
     static ArrayList<ObjectOutputStream>list = new ArrayList<>();
+    public static Connection databaseConnection;
+
 
     public static void main(String[] args) {
         ServerSocket serverSocket = null;
         Socket socket;
+
+        try{
+            databaseConnection = DatabaseConnection.getConnection();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+
         try {
             serverSocket = new ServerSocket(6969);
         } catch (IOException e) {

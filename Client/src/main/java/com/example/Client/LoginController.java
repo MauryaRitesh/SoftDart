@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -56,17 +57,40 @@ public class LoginController{
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
+
+    private class LoginReq {
+        public String username;
+        public String password;
+    }
+
+    private class LoginRes {
+        public boolean status;
+    }
+
     public void validateLogin(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
+//        String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
+        LoginReq req = new LoginReq();
+        req.username = usernameTextField.getText();
+        req.password = enterPasswordField.getText();
+        try {
+
+            Client.oos.writeObject(req);
+            Client.oos.flush();
+
+            LoginRes res = (LoginRes) Client.ois.readObject();
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
 
         try{
             assert connectDB != null;
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
-
             while (queryResult.next()){
                 if (queryResult.getInt(1) == 1){
                     loginMessageLabel.setText("Congratulations!");

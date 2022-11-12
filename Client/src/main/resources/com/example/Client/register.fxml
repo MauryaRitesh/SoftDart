@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="451.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Client.RegisterController">
+<AnchorPane prefHeight="451.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.softdart.RegisterController">
    <children>
       <AnchorPane layoutY="82.0" prefHeight="370.0" prefWidth="520.0" />
       <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #E96151;">
@@ -57,7 +57,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Label fx:id="registrationMessageLabel" alignment="CENTER" layoutX="92.0" layoutY="91.0" prefHeight="17.0" prefWidth="336.0" text="User registered successfully!" textFill="#00ad3c" />
+      <Label fx:id="registrationMessageLabel" alignment="CENTER" layoutX="92.0" layoutY="91.0" prefHeight="17.0" prefWidth="336.0" textFill="#00ad3c" />
       <Label fx:id="confirmPasswordLabel" alignment="CENTER_RIGHT" layoutX="204.0" layoutY="295.0" prefHeight="17.0" prefWidth="223.0" text="Password didn't match" textFill="RED" />
       <PasswordField fx:id="setPasswordField" layoutX="92.0" layoutY="266.0" prefHeight="25.0" prefWidth="336.0" promptText="Password" />
       <PasswordField fx:id="confirmPasswordField" layoutX="92.0" layoutY="313.0" prefHeight="25.0" prefWidth="336.0" promptText="Confirm Password" />

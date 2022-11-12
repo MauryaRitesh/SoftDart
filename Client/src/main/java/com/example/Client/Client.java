@@ -13,10 +13,13 @@ package com.example.Client;
         import java.util.Scanner;
 
 public class Client {
+
+public static ObjectOutputStream oos;
+    public static ObjectInputStream ois;
+
+
     public static void main(String[] args) {
         Socket socket;
-        ObjectOutputStream oos;
-        ObjectInputStream ois;
         String name,text;
         try {
             //creating a new socket connection
