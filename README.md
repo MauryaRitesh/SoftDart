@@ -5,7 +5,7 @@
 ## Erudition repository
  
 ## Abstract 
-Erudition repository is an question-and-answer website where questions are asked, answered, and edited by Internet users, either factually or in the form of opinions. The developed project helps the entire fraternity to gain and share knowledge. This platform gives opportunity to ask the questions and get the lacking knowledge. It provides the user an opportunity to search the questions and required knowledge from the answers.
+Erudition repository is an question-and-answer forum where questions are asked, answered, and edited by Internet users, either factually or in the form of opinions. The developed project helps the entire fraternity to gain and share knowledge. This platform gives opportunity to ask the questions and get the lacking knowledge. It provides the user an opportunity to search the questions and required knowledge from the answers.
 
 The user mostly see the answer which has most up votes. Also, user can able to see his/her own answers and question. It requires client to register first and then proceed to login with his requirements. Also, verification of the user name is not required.
 
