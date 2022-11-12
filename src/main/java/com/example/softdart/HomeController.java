@@ -1,5 +1,6 @@
 package com.example.softdart;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,6 +33,20 @@ public class HomeController{
     private Button settingsButton;
     @FXML
     private Button logoutButton;
+    @FXML
+    private Button closeButton;
+
+    @FXML
+    private Button addQuestionButton;
+    @FXML
+    private TextField firstnameTextField;
+    @FXML
+    private TextField lastnameTextField;
+    @FXML
+    private TextField usernameTextField;
+
+
+
 
 
     public void profileButtonOnAction(ActionEvent event){
@@ -44,6 +59,29 @@ public class HomeController{
     public void logoutButtonOnAction(ActionEvent event){
 
     }
+
+    @FXML
+    public void addQuestionButtonOnAction(ActionEvent event){
+        //add question to the database.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("questions.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 520, 470);
+            Stage questionStage = HelloApplication.appStage;
+            questionStage.setScene(scene);
+            questionStage.show();
+
+        } catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    public void closeButtonOnAction(ActionEvent event){
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+        Platform.exit();
+    }
+
 
     @FXML
     public void profilePage(){
@@ -59,6 +97,8 @@ public class HomeController{
             e.getCause();
         }
     }
+
+
 
     @FXML
     protected void onHelloButtonClick() {

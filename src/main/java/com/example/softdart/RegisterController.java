@@ -46,11 +46,15 @@ public class RegisterController implements Initializable {
 
     public void registerButtonOnAction(ActionEvent event){
         if (setPasswordField.getText().equals(confirmPasswordField.getText())){
-            registerUser();
-            confirmPasswordLabel.setText("");
-            registrationMessageLabel.setText("User registered successfully!");
+            try {
+                registerUser();
+                confirmPasswordLabel.setText("");
+                registrationMessageLabel.setText("User registered successfully!");
 
-            homePage();
+                homePage();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
 
         } else {
             confirmPasswordLabel.setText("Password does not match");
@@ -92,10 +96,14 @@ public class RegisterController implements Initializable {
     }
 
     @FXML
-    public void homePage(){
+    public static void homePage(){
+        BackToHomePage();
+    }
+
+    static void BackToHomePage() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             Stage homeStage = HelloApplication.appStage;
             homeStage.setScene(scene);
             homeStage.show();

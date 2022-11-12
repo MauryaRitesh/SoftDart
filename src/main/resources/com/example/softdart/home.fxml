@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.softdart.HomeController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="134.0" style="-fx-background-color: #E96151;">
@@ -23,7 +22,7 @@
          </font>
       </Label>
       <ScrollPane layoutX="159.0" layoutY="88.0" prefHeight="292.0" prefWidth="416.0" style="-fx-background-color: #e6e6e6;" />
-      <Button layoutX="517.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #E96151;" text="+" textFill="WHITE">
+      <Button fx:id="addQuestionButton" layoutX="517.0" layoutY="323.0" mnemonicParsing="false" onAction="#addQuestionButtonOnAction" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #E96151;" text="+" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>

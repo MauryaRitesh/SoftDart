@@ -1,4 +1,5 @@
 package com.example.softdart;
+import com.example.softdart.RegisterController;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,6 +61,7 @@ public class LoginController{
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
+
         String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
 
         try{
@@ -68,8 +70,10 @@ public class LoginController{
 
             while (queryResult.next()){
                 if (queryResult.getInt(1) == 1){
-                    loginMessageLabel.setText("Congratulations!");
+                    //loginMessageLabel.setText("Congratulations!");
                     //createAccountForm();
+                    //String userName = usernameTextField.getText();
+                    RegisterController.homePage();
                 }else{
                     loginMessageLabel.setText("Invalid Credentials. Please try again.");
                 }
