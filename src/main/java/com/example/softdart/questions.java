@@ -8,6 +8,7 @@ public class questions {
     public SimpleStringProperty QuestionTitle = new SimpleStringProperty();
     public  SimpleStringProperty QuestionDescription = new SimpleStringProperty();
 
+
     public  SimpleStringProperty user = new SimpleStringProperty();
 
     public SimpleIntegerProperty upvotes = new SimpleIntegerProperty();
@@ -51,3 +52,4 @@ public class questions {
         this.downvotes.set(downvotes);
     }
 }
+//sql transactions
