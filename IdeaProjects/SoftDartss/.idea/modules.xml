@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Loginapp/Client/Client.iml" filepath="$PROJECT_DIR$/Loginapp/Client/Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LoginApp/Server/Server.iml" filepath="$PROJECT_DIR$/LoginApp/Server/Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SoftDartss.iml" filepath="$PROJECT_DIR$/.idea/SoftDartss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/out/out.iml" filepath="$PROJECT_DIR$/out/out.iml" />
+      <module fileurl="file://$PROJECT_DIR$/out/production/production.iml" filepath="$PROJECT_DIR$/out/production/production.iml" />
+    </modules>
+  </component>
+</project>
