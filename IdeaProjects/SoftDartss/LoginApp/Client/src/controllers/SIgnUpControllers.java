@@ -1,4 +1,4 @@
 package controllers;
 
-public class SIgnUpControllers {
+public class SignUpControllers {
 }
